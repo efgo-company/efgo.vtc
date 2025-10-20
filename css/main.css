@@ -692,12 +692,12 @@ header.scroll {
 }
 
 .btn__a-recruitment--link {
-    color: #3471db;
-    font-weight: 600;
+    color: #3471db !important;
+    font-weight: 600 !important;
 }
 
 .btn__a-recruitment--link:hover {
-    text-decoration: underline;
+    text-decoration: underline !important;
 }
 
 .popup__recruitment {
