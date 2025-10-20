@@ -151,6 +151,8 @@ header.scroll {
     text-transform: uppercase;
     letter-spacing: 1px;
     padding: 0.5rem 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     transition: 0.2s;
 }
 
@@ -169,7 +171,6 @@ header.scroll {
 
 .header__link:hover {
     color: #b42407;
-    transform: translateY(-3px);
 }
 
 .header__link:hover::before {
@@ -178,6 +179,7 @@ header.scroll {
 
 .header__link-active {
     color: #b42407;
+    font-size: 1.2rem;
 }
 
 .header__link-active:hover {

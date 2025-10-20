@@ -160,7 +160,7 @@
                 </div>
                 <img src="images/backgrounds/3.png" class="img__container__join-toOurCompany">
             </div>
-
+            <div class="news" id="news"></div>
         </div>
     </section>
 
@@ -205,6 +205,23 @@
             </div>
         </div>
     </footer>
+
+    <script src="https://js.pusher.com/8.2/pusher.min.js"></script>
+    <script>
+        const pusher = new Pusher('5355b2b3f9ec982d949a', {
+            cluster: 'eu',
+            forceTLS: true
+        });
+
+        const channel = pusher.subscribe('discord-channel');
+
+        channel.bind('new-message', function (data) {
+            const container = document.getElementById('news');
+            const div = document.createElement('div');
+            div.textContent = `${data.author}: ${data.content}`;
+            container.appendChild(div);
+        });
+    </script>
 
 </body>
 
