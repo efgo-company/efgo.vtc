@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } else if (id === 'dlc') {
             if (value === '') message = "Це поле обов'язкове для заповнення";
         } else if (id === 'age') {
-            if (!/^\d{1,2}$/.test(value) || +value < 14 || +value > 99) message = 'Вік має бути від 14 до 99';
+            if (!/^\d{1,2}$/.test(value) || +value < 18 || +value > 99) message = 'Вік має бути від 18 до 99';
         } else if (id === 'activity') {
             if (value.length < 3) message = 'Опишіть Вашу активність';
         } else if (id === 'person') {
