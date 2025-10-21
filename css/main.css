@@ -84,7 +84,7 @@ body {
 
 :root {
     --primary: #FFFBEF;
-    --font-family: 'Gotham Pro', sans-serif;
+    --font-family: 'Gotham Pro';
     --main-dark-color: #3536435b;
     --main-darklight-color: #48495b5b;
     --main-ui-opacity: 0.05;
@@ -104,6 +104,10 @@ body {
 
 .section__second {
     background-image: url(../images/backgrounds/2.png);
+}
+
+.section__third {
+    background-image: url(../images/backgrounds/3.png);
 }
 
 header {
@@ -171,6 +175,8 @@ header.scroll {
 
 .header__link:hover {
     color: #b42407;
+    font-family: var(--font-family);
+    font-weight: 500;
 }
 
 .header__link:hover::before {
@@ -851,6 +857,94 @@ footer {
 
 .footer__column-link:hover {
     color: var(--primary);
+}
+
+.news {
+    display: grid;
+    grid-template-columns: repeat(3, 480px);
+    justify-content: center;
+    align-items: start;
+    padding: 40px;
+    margin-top: 70px;
+    gap: 40px;
+}
+
+.block__news {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 480px;
+    height: 456px;
+    background: rgba(185, 41, 16, 0.1);
+    border: 1px solid #b93510;
+    border-radius: 12px;
+    color: var(--primary);
+    gap: 20px;
+    transition: 0.2s;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.block__news:hover {
+    transform: scale(1.05);
+    backdrop-filter: blur(10px);
+    transition: 0.2s;
+}
+
+.block__news p {
+    margin: 0;
+    width: 100%;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+}
+
+.block__news img {
+    width: 218px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.news__images {
+    margin-top: 20px;
+}
+
+.block__news strong {
+    font-weight: 700;
+}
+
+.block__news u {
+    text-decoration: underline;
+    text-decoration-thickness: auto;
+    text-underline-offset: 2px;
+}
+
+.block__news em {
+    font-style: italic;
+}
+
+.block__news del {
+    text-decoration: line-through;
+}
+
+.block__news code {
+    background: rgba(255, 255, 255, 0.04);
+    padding: 2px 6px;
+    border-radius: 6px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Segoe UI Mono", "Roboto Mono", "Courier New", monospace;
+    font-size: 0.95em;
+}
+
+.block__news pre {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 12px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: inherit;
+    font-size: 0.95em;
 }
 
 @media (max-width: 768px) {

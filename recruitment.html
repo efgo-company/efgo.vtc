@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://hcaptcha.com/1/api.js" async defer></script>
     <script src="js/js.js" defer></script>
     <script src="js/recruitment.js" defer></script>
 </head>
@@ -131,6 +132,9 @@
                 <div class="container__input-apply">
                     <label>Коментар (Необов'язково)</label>
                     <input class="input input__apply" type="text" id="comment" placeholder="Коментар">
+                </div>
+                <div id="hcaptcha-container">
+                    <div class="h-captcha" data-sitekey="3e9c3fc4-9fb0-4c7a-bda0-9a90a2067b18"></div>
                 </div>
                 <div style="width: 556px; display: flex; gap: 20px; align-items: center;">
                     <button class="btn__send-recruitment" type="submit">

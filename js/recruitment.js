@@ -26,6 +26,16 @@ document.addEventListener('DOMContentLoaded', function () {
             if (!valid) isValid = false;
         });
 
+        // Проверка hCaptcha
+        const captchaResponse = hcaptcha.getResponse();
+        const captchaContainer = document.getElementById('hcaptcha-container');
+        if (!captchaResponse) {
+            isValid = false;
+            showCaptchaError(captchaContainer, 'Підтвердіть, що ви не робот');
+        } else {
+            removeCaptchaError();
+        }
+
         if (!isValid) {
             isSubmitting = false;
             return;
@@ -101,11 +111,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.querySelector('.container__form-sended').style.display = 'flex';
                 window.scrollTo({ top: 0, behavior: 'smooth' });
                 form.reset();
+                hcaptcha.reset();
             }
-        }).catch(error => {
-            console.error("Помилка при відправці заявки:", error);
-            alert("Сталася помилка при відправці заявки.");
-        }).finally(() => {
+        }).catch(() => { }).finally(() => {
             isSubmitting = false;
         });
     });
@@ -159,5 +167,20 @@ document.addEventListener('DOMContentLoaded', function () {
         requestAnimationFrame(() => {
             error.classList.add('visible');
         });
+    }
+
+    function showCaptchaError(container, message) {
+        removeCaptchaError();
+        const error = document.createElement('div');
+        error.className = 'error-message';
+        error.textContent = message;
+        container.appendChild(error);
+        requestAnimationFrame(() => {
+            error.classList.add('visible');
+        });
+    }
+
+    function removeCaptchaError() {
+        document.querySelector('#hcaptcha-container .error-message')?.remove();
     }
 });
