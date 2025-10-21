@@ -863,7 +863,7 @@ footer {
     display: grid;
     grid-template-columns: repeat(3, 480px);
     justify-content: center;
-    align-items: start;
+    align-items: center;
     padding: 40px;
     margin-top: 70px;
     gap: 40px;
