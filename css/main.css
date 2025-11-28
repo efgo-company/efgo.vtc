@@ -256,8 +256,8 @@ header.scroll {
 }
 
 .btn__social-main:hover {
-    background: rgba(185, 47, 16, 0.2);
-    border-color: #d35934;
+    background: red;
+    color: var(--primary);
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(185, 53, 16, 0.2);
 }
